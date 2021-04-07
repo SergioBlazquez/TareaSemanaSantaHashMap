@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -24,59 +20,92 @@
                <children>
                   <AnchorPane prefHeight="80.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/casaDI.png" />
+                           </image></ImageView>
                         <Label layoutX="59.0" layoutY="32.0" text="Tareas" textFill="WHITE">
                            <font>
-                              <Font size="21.0" />
+                              <Font name="System Bold" size="21.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="344.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="374.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/tresLineas.png" />
+                           </image></ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <AnchorPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-size: 200 50; -fx-background-radius: 8 8 8 8;">
                      <children>
                         <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
                         <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
                         <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                      <children>
                         <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
+                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PSP" />
                         <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
                   </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="140.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <AnchorPane layoutX="10.0" layoutY="140.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                      <children>
                         <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
+                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 DI" />
                         <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
                   </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="190.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <AnchorPane layoutX="10.0" layoutY="190.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                      <children>
                         <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
+                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 DI" />
                         <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
                   </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="240.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <AnchorPane layoutX="10.0" layoutY="240.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                      <children>
                         <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
+                        <Label layoutX="53.0" layoutY="14.0" text="Hacer Práctica 2 PMDP">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding></Label>
                         <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
                   </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="290.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <AnchorPane layoutX="10.0" layoutY="290.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                      <children>
                         <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
+                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PMDP" />
                         <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
                   </AnchorPane>
-                  <Label style="-fx-background-color: #A44796;" text="&gt; Completado 199" textFill="WHITE" />
-                  <Label style="-fx-background-color: #A44796;" text=" +  Agreagar una tarea" textFill="WHITE" />
+                  <Label style="-fx-background-color: #A44796;" text="&gt; Completado 199" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></Label>
+                  <Label prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #A44796;" text=" +  Agreagar una tarea" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></Label>
                </children>
             </VBox>
          </children>
