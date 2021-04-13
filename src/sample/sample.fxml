@@ -6,109 +6,123 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #B24FA3;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #B24FA3;">
+      <VBox layoutX="50.0" layoutY="2.0" prefHeight="500.0" prefWidth="400.0">
          <children>
-            <VBox layoutX="50.0" layoutY="2.0" prefHeight="500.0" prefWidth="400.0">
+            <AnchorPane prefHeight="80.0" prefWidth="200.0">
                <children>
-                  <AnchorPane prefHeight="80.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/casaDI.png" />
-                           </image></ImageView>
-                        <Label layoutX="59.0" layoutY="32.0" text="Tareas" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="21.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="374.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/tresLineas.png" />
-                           </image></ImageView>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-size: 200 50; -fx-background-radius: 8 8 8 8;">
-                     <children>
-                        <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
-                        <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
-                     <children>
-                        <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PSP" />
-                        <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                     <VBox.margin>
-                        <Insets top="2.0" />
-                     </VBox.margin>
-                  </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="140.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
-                     <children>
-                        <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 DI" />
-                        <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                     <VBox.margin>
-                        <Insets top="2.0" />
-                     </VBox.margin>
-                  </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="190.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
-                     <children>
-                        <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 DI" />
-                        <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                     <VBox.margin>
-                        <Insets top="2.0" />
-                     </VBox.margin>
-                  </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="240.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
-                     <children>
-                        <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="53.0" layoutY="14.0" text="Hacer Práctica 2 PMDP">
-                           <padding>
-                              <Insets top="5.0" />
-                           </padding></Label>
-                        <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                     <VBox.margin>
-                        <Insets top="2.0" />
-                     </VBox.margin>
-                  </AnchorPane>
-                  <AnchorPane layoutX="10.0" layoutY="290.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
-                     <children>
-                        <RadioButton layoutX="14.0" layoutY="17.0" mnemonicParsing="false" />
-                        <Label layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PMDP" />
-                        <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                     <VBox.margin>
-                        <Insets top="2.0" />
-                     </VBox.margin>
-                  </AnchorPane>
-                  <Label style="-fx-background-color: #A44796;" text="&gt; Completado 199" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin></Label>
-                  <Label prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #A44796;" text=" +  Agreagar una tarea" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin></Label>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/casaDI.png" />
+                     </image></ImageView>
+                  <Label layoutX="59.0" layoutY="32.0" text="Tareas" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="373.0" layoutY="22.0" style="-fx-background-color: #A44796;" text="..." textFill="WHITE">
+                     <font>
+                        <Font size="31.0" />
+                     </font></Label>
                </children>
-            </VBox>
+            </AnchorPane>
+            <AnchorPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-size: 200 50; -fx-background-radius: 8 8 8 8;">
+               <children>
+                  <RadioButton fx:id="rb1" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB1" />
+                  <Label fx:id="label1" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
+                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estrella.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+               <children>
+                  <RadioButton fx:id="rb2" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB2" />
+                  <Label fx:id="label2" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PSP" />
+                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estrella.jpg" />
+                     </image></ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="140.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+               <children>
+                  <RadioButton fx:id="rb3" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB3" />
+                  <Label fx:id="label3" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 DI" />
+                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estrella.jpg" />
+                     </image></ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="190.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+               <children>
+                  <RadioButton fx:id="rb4" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB4" />
+                  <Label fx:id="label4" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 DI" />
+                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estrella.jpg" />
+                     </image></ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="240.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+               <children>
+                  <RadioButton fx:id="rb5" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB5" />
+                  <Label fx:id="label5" layoutX="53.0" layoutY="14.0" text="Hacer Práctica 2 PMDP">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding></Label>
+                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estrella.jpg" />
+                     </image></ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="290.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+               <children>
+                  <RadioButton fx:id="rb6" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB6" />
+                  <Label fx:id="label6" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PMDP" />
+                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estrella.jpg" />
+                     </image></ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Label opacity="0.75" style="-fx-background-color: #A44796;" text="&gt; Completado 199" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Label>
+            <AnchorPane fx:id="ap1" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #A44796;" visible="false">
+               <children>
+                  <Button fx:id="b1" layoutX="6.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#setOnClickB1" prefHeight="15.0" style="-fx-background-color: #A44796;" text="+" textFill="WHITE" />
+                  <TextField fx:id="tf1" layoutX="31.0" layoutY="13.0" prefHeight="25.0" prefWidth="200.0" promptText="Agregar una tarea" style="-fx-background-color: #A44796;" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
-</GridPane>
+</AnchorPane>
