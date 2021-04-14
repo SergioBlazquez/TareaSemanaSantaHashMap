@@ -8,49 +8,36 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Controller {
 
-    int contador=0;
-    //ArrayList<String> lista = new ArrayList<String>();
-    //lista.add("Hacer Práctica 2 PSP");
+
+    ArrayList<String> lista= new ArrayList<>();
+    ArrayList<Label> listaLabels= new ArrayList<>();
+    Map<Label,String> mapa=new HashMap();
 
     @FXML
-    RadioButton rb1;
+    public void initialize(){
+
+
+        mapa.put(label1,"Hacer Práctica 2 PSP");
+        mapa.put(label2,"Hacer Práctica 1 PSP");
+        mapa.put(label3,"Hacer Práctica 2 DI");
+        mapa.put(label4,"Hacer Práctica 1 DI");
+        mapa.put(label5,"Hacer Práctica 2 PMDP");
+        mapa.put(label6,"Hacer Práctica 1 PMDP");
+
+    }
+
 
     @FXML
-    RadioButton rb2;
+    RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
 
     @FXML
-    RadioButton rb3;
-
-    @FXML
-    RadioButton rb4;
-
-    @FXML
-    RadioButton rb5;
-
-    @FXML
-    RadioButton rb6;
-
-    @FXML
-    Label label1;
-
-    @FXML
-    Label label2;
-
-    @FXML
-    Label label3;
-
-    @FXML
-    Label label4;
-
-    @FXML
-    Label label5;
-
-    @FXML
-    Label label6;
+    Label label1,label2,label3,label4,label5,label6;
 
     @FXML
     AnchorPane ap1;
@@ -64,35 +51,32 @@ public class Controller {
 
     public void onClickRB1(){
 
-        label1.setText("");
-        contador++;
+        mapa.replace(label1,"");
+        actualizarLabels(label1);
         ap1.setVisible(true);
-
-
     }
 
     public void onClickRB2(){
 
-        label2.setText("");
-        contador++;
+        mapa.replace(label2,"");
+        actualizarLabels(label2);
         ap1.setVisible(true);
-
 
     }
 
     public void onClickRB3(){
 
-        label3.setText("");
-        contador++;
+        mapa.replace(label3,"");
+        actualizarLabels(label3);
         ap1.setVisible(true);
-
 
     }
 
     public void onClickRB4(){
 
-        label4.setText("");
-        contador++;
+
+        mapa.replace(label4,"");
+        actualizarLabels(label4);
         ap1.setVisible(true);
 
 
@@ -100,87 +84,72 @@ public class Controller {
 
     public void onClickRB5(){
 
-        label5.setText("");
-        contador++;
+        mapa.replace(label5,"");
+        actualizarLabels(label5);
         ap1.setVisible(true);
-
 
     }
 
     public void onClickRB6(){
 
-        label6.setText("");
-        contador++;
+        mapa.replace(label6,"");
+        actualizarLabels(label6);
         ap1.setVisible(true);
 
 
     }
 
-    public void deshabilitarAgregarTarea(int cont){
-        if(cont==0)
-            ap1.setVisible(false);
+    public void deshabilitarAgregarTarea(){
+
+        String value;
+
+        for (Label key: mapa.keySet()) {
+
+            value =mapa.get(key);
+            if(value.equals(""))
+                ap1.setVisible(true);
+
+        }
+
+
     }
 
 
 
     public void setOnClickB1(){
 
-        if(label1.getText().equals("")) {
-            label1.setText(tf1.getText());
-            tf1.setPromptText("Agregar una tarea");
-            tf1.setText("");
-            contador--;
-            deshabilitarAgregarTarea(contador);
+        for (Label key: mapa.keySet()) {
+            System.out.println("Key: "+key+" Values: "+mapa.get(key));
+        }
 
-        }else{
+        String value;
+        boolean booleano=false;
+        for (Label key: mapa.keySet()) {
+            value =mapa.get(key);
+            if(value.equals("") && !booleano){
+                key.setText(tf1.getText());
+                mapa.replace(key,tf1.getText());
+                booleano= true;
 
-            if(label2.getText().equals("")) {
-                label2.setText(tf1.getText());
-                tf1.setPromptText("Agregar una tarea");
-                tf1.setText("");
-                contador--;
-                deshabilitarAgregarTarea(contador);
-            }else{
-
-                if(label3.getText().equals("")) {
-                    label3.setText(tf1.getText());
-                    tf1.setPromptText("Agregar una tarea");
-                    tf1.setText("");
-                    contador--;
-                    deshabilitarAgregarTarea(contador);
-                }else{
-
-                    if(label4.getText().equals("")) {
-                        label4.setText(tf1.getText());
-                        tf1.setPromptText("Agregar una tarea");
-                        tf1.setText("");
-                        contador--;
-                        deshabilitarAgregarTarea(contador);
-                    }else{
-
-                        if(label5.getText().equals("")) {
-                            label5.setText(tf1.getText());
-                            tf1.setPromptText("Agregar una tarea");
-                            tf1.setText("");
-                            contador--;
-                            deshabilitarAgregarTarea(contador);
-                        }else{
-
-                            if(label6.getText().equals("")){
-                                label6.setText(tf1.getText());
-                                tf1.setPromptText("Agregar una tarea");
-                                tf1.setText("");
-                                contador--;
-                                deshabilitarAgregarTarea(contador);
-                            }
-                        }
-                    }
-                }
             }
+
+
+
+        }
+        tf1.setPromptText("Agregar una tarea");
+        tf1.setText("");
+        ap1.setVisible(false);//Cambiar esto a deshabilitarAgregarTarea
+        deshabilitarAgregarTarea();
 
 
         }
 
+    public void actualizarLabels(Label label){
+
+        label.setText(mapa.get(label));
+
     }
 
-}
+    }
+
+
