@@ -6,19 +6,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-
-
-
 import java.util.HashMap;
-
-
 
 public class Controller{
 
-
     HashMap<Label,String> mapa=new HashMap();
-
-
 
     @FXML
     public void initialize(){
@@ -30,8 +22,6 @@ public class Controller{
         mapa.put(label4,"Hacer Práctica 1 DI");
         mapa.put(label5,"Hacer Práctica 2 PMDP");
         mapa.put(label6,"Hacer Práctica 1 PMDP");
-
-
 
     }
 
@@ -113,26 +103,6 @@ public class Controller{
 
     }
 
-    public void deshabilitarAgregarTarea(){
-
-        String value;
-        boolean booleano=false;
-        for (Label key: mapa.keySet()) {
-
-            value =mapa.get(key);
-            if(value.equals("")){
-                ap1.setVisible(true);
-                booleano=true;
-            }
-
-        }
-        if(!booleano)
-            ap1.setVisible(false);
-
-    }
-
-
-
     @FXML
     public void setOnClickB1(){
 
@@ -154,7 +124,25 @@ public class Controller{
         //deshabilitarAgregarTarea();
 
 
+    }
+
+    public void deshabilitarAgregarTarea(){
+
+        String value;
+        boolean booleano=false;
+        for (Label key: mapa.keySet()) {
+
+            value =mapa.get(key);
+            if(value.equals("")){
+                ap1.setVisible(true);
+                booleano=true;
+            }
+
         }
+        if(!booleano)
+            ap1.setVisible(false);
+
+    }
 
     public void actualizarLabels(Label label){
 
