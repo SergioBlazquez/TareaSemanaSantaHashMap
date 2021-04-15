@@ -7,17 +7,18 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.util.ArrayList;
+
+
 import java.util.HashMap;
-import java.util.Map;
 
 
-public class Controller {
+
+public class Controller{
 
 
-    ArrayList<String> lista= new ArrayList<>();
-    ArrayList<Label> listaLabels= new ArrayList<>();
-    Map<Label,String> mapa=new HashMap();
+    HashMap<Label,String> mapa=new HashMap();
+
+
 
     @FXML
     public void initialize(){
@@ -30,8 +31,9 @@ public class Controller {
         mapa.put(label5,"Hacer Práctica 2 PMDP");
         mapa.put(label6,"Hacer Práctica 1 PMDP");
 
-    }
 
+
+    }
 
     @FXML
     RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
@@ -48,53 +50,65 @@ public class Controller {
     @FXML
     TextField tf1;
 
-
+    @FXML
     public void onClickRB1(){
 
         mapa.replace(label1,"");
         actualizarLabels(label1);
-        ap1.setVisible(true);
+
+        //ap1.setVisible(true);
+        //deshabilitarAgregarTarea();
     }
 
+    @FXML
     public void onClickRB2(){
 
         mapa.replace(label2,"");
         actualizarLabels(label2);
-        ap1.setVisible(true);
+        //ap1.setVisible(true);
+        //deshabilitarAgregarTarea();
 
     }
 
+    @FXML
     public void onClickRB3(){
 
         mapa.replace(label3,"");
         actualizarLabels(label3);
-        ap1.setVisible(true);
+        //ap1.setVisible(true);
+        //deshabilitarAgregarTarea();
 
     }
 
+    @FXML
     public void onClickRB4(){
 
 
         mapa.replace(label4,"");
         actualizarLabels(label4);
-        ap1.setVisible(true);
+        //ap1.setVisible(true);
+       // deshabilitarAgregarTarea();
 
 
     }
 
+    @FXML
     public void onClickRB5(){
 
         mapa.replace(label5,"");
         actualizarLabels(label5);
-        ap1.setVisible(true);
+        //ap1.setVisible(true);
+       // deshabilitarAgregarTarea();
 
     }
 
+    @FXML
     public void onClickRB6(){
 
         mapa.replace(label6,"");
         actualizarLabels(label6);
-        ap1.setVisible(true);
+        //ap1.setVisible(true);
+       // deshabilitarAgregarTarea();
 
 
     }
@@ -102,25 +116,25 @@ public class Controller {
     public void deshabilitarAgregarTarea(){
 
         String value;
-
+        boolean booleano=false;
         for (Label key: mapa.keySet()) {
 
             value =mapa.get(key);
-            if(value.equals(""))
+            if(value.equals("")){
                 ap1.setVisible(true);
+                booleano=true;
+            }
 
         }
-
+        if(!booleano)
+            ap1.setVisible(false);
 
     }
 
 
 
+    @FXML
     public void setOnClickB1(){
-
-        for (Label key: mapa.keySet()) {
-            System.out.println("Key: "+key+" Values: "+mapa.get(key));
-        }
 
         String value;
         boolean booleano=false;
@@ -129,27 +143,25 @@ public class Controller {
             if(value.equals("") && !booleano){
                 key.setText(tf1.getText());
                 mapa.replace(key,tf1.getText());
+                actualizarLabels(key);
                 booleano= true;
 
             }
 
-
-
         }
-        tf1.setPromptText("Agregar una tarea");
         tf1.setText("");
-        ap1.setVisible(false);//Cambiar esto a deshabilitarAgregarTarea
-        deshabilitarAgregarTarea();
+        //ap1.setVisible(false);//Cambiar esto a deshabilitarAgregarTarea
+        //deshabilitarAgregarTarea();
 
 
         }
 
     public void actualizarLabels(Label label){
 
+
         label.setText(mapa.get(label));
+        deshabilitarAgregarTarea();
 
     }
 
-    }
-
-
+}

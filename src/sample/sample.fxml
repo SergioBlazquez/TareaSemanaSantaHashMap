@@ -21,9 +21,9 @@
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Button layoutX="354.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-color: #A44796;" text=". . ." textAlignment="RIGHT" textFill="WHITE">
+                  <Button layoutX="370.0" layoutY="35.0" mnemonicParsing="false" style="-fx-background-color: #A44796;" text=". . ." textAlignment="RIGHT" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="11.0" />
                      </font>
                   </Button>
                </children>
