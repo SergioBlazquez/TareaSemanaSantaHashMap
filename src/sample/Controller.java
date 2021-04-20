@@ -6,7 +6,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Controller{
 
@@ -32,41 +35,51 @@ public class Controller{
     Label label1,label2,label3,label4,label5,label6;
 
     @FXML
-    AnchorPane ap1;
+    AnchorPane anchorPane1;
 
     @FXML
-    Button b1;
+    Button botonAgregar1;
 
     @FXML
-    TextField tf1;
+    TextField textField1;
 
     @FXML
     public void onClickRB1(){
 
         mapa.replace(label1,"");
-        actualizarLabels(label1);
+        //actualizarLabels(label1);
 
-        //ap1.setVisible(true);
-        //deshabilitarAgregarTarea();
+        //Binder
+
+        Binder.bind(mapa.get(label1),label1,false);
+        deshabilitarAgregarTarea();
+
     }
 
     @FXML
     public void onClickRB2(){
 
         mapa.replace(label2,"");
-        actualizarLabels(label2);
-        //ap1.setVisible(true);
-        //deshabilitarAgregarTarea();
+        //actualizarLabels(label2);
 
+        //Binder
+
+        Binder.bind(mapa.get(label2),label2,false);
+
+        deshabilitarAgregarTarea();
     }
 
     @FXML
     public void onClickRB3(){
 
         mapa.replace(label3,"");
-        actualizarLabels(label3);
-        //ap1.setVisible(true);
-        //deshabilitarAgregarTarea();
+        //actualizarLabels(label3);
+
+
+        //Binder
+
+        Binder.bind(mapa.get(label3),label3,false);
+        deshabilitarAgregarTarea();
 
     }
 
@@ -75,9 +88,13 @@ public class Controller{
 
 
         mapa.replace(label4,"");
-        actualizarLabels(label4);
-        //ap1.setVisible(true);
-       // deshabilitarAgregarTarea();
+        //actualizarLabels(label4);
+
+
+        //Binder
+
+        Binder.bind(mapa.get(label4),label4,false);
+        deshabilitarAgregarTarea();
 
 
     }
@@ -86,9 +103,13 @@ public class Controller{
     public void onClickRB5(){
 
         mapa.replace(label5,"");
-        actualizarLabels(label5);
-        //ap1.setVisible(true);
-       // deshabilitarAgregarTarea();
+        //actualizarLabels(label5);
+
+
+        //Binder
+
+        Binder.bind(mapa.get(label5),label5,false);
+        deshabilitarAgregarTarea();
 
     }
 
@@ -96,9 +117,13 @@ public class Controller{
     public void onClickRB6(){
 
         mapa.replace(label6,"");
-        actualizarLabels(label6);
-        //ap1.setVisible(true);
-       // deshabilitarAgregarTarea();
+        //actualizarLabels(label6);
+
+
+        //Binder
+
+        Binder.bind(mapa.get(label6),label6,false);
+        deshabilitarAgregarTarea();
 
 
     }
@@ -108,20 +133,27 @@ public class Controller{
 
         String value;
         boolean booleano=false;
+        //Values y size para cambiar el for
         for (Label key: mapa.keySet()) {
             value =mapa.get(key);
             if(value.equals("") && !booleano){
-                key.setText(tf1.getText());
-                mapa.replace(key,tf1.getText());
-                actualizarLabels(key);
+                key.setText(textField1.getText());
+                mapa.replace(key,textField1.getText());
+                //actualizarLabels(key);
+                Binder.bind(textField1.getText(),key,false);
+                deshabilitarAgregarTarea();
                 booleano= true;
 
             }
 
         }
-        tf1.setText("");
-        //ap1.setVisible(false);//Cambiar esto a deshabilitarAgregarTarea
+        textField1.setText("");
+        //anchorPane1.setVisible(false);//Cambiar esto a deshabilitarAgregarTarea
         //deshabilitarAgregarTarea();
+
+        Collection<String> coleccion = mapa.values();
+        Iterator<String> it = coleccion.iterator();
+
 
 
     }
@@ -134,13 +166,13 @@ public class Controller{
 
             value =mapa.get(key);
             if(value.equals("")){
-                ap1.setVisible(true);
+                anchorPane1.setVisible(true);
                 booleano=true;
             }
 
         }
         if(!booleano)
-            ap1.setVisible(false);
+            anchorPane1.setVisible(false);
 
     }
 
