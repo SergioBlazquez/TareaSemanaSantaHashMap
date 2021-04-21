@@ -30,7 +30,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-size: 200 50; -fx-background-radius: 8 8 8 8;">
                <children>
-                  <RadioButton fx:id="rb1" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB1" />
+                  <RadioButton fx:id="radioButton1" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB1" />
                   <Label fx:id="label1" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
                   <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,7 +44,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
-                  <RadioButton fx:id="rb2" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB2" />
+                  <RadioButton fx:id="radioButton2" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB2" />
                   <Label fx:id="label2" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PSP" />
                   <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,7 +57,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="140.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
-                  <RadioButton fx:id="rb3" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB3" />
+                  <RadioButton fx:id="radioButton3" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB3" />
                   <Label fx:id="label3" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 DI" />
                   <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -70,7 +70,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="190.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
-                  <RadioButton fx:id="rb4" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB4" />
+                  <RadioButton fx:id="radioButton4" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB4" />
                   <Label fx:id="label4" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 DI" />
                   <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -83,7 +83,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="240.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
-                  <RadioButton fx:id="rb5" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB5" />
+                  <RadioButton fx:id="radioButton5" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB5" />
                   <Label fx:id="label5" layoutX="53.0" layoutY="14.0" text="Hacer Práctica 2 PMDP">
                      <padding>
                         <Insets top="5.0" />
@@ -99,7 +99,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="290.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
-                  <RadioButton fx:id="rb6" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB6" />
+                  <RadioButton fx:id="radioButton6" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB6" />
                   <Label fx:id="label6" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PMDP" />
                   <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>

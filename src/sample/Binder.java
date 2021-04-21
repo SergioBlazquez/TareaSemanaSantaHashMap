@@ -6,9 +6,9 @@ import javafx.scene.image.Image;
 
 public class Binder {
 
-    public static void bind(String texto, Label label/*, Image image*/, Boolean booleano) {
+    public static void bind(Tarea tarea, Label label, Image image) {
 
-        label.setText(texto);
+        label.setText(tarea.getTexto());
 
     }
 

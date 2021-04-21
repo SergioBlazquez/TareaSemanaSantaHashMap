@@ -5,31 +5,37 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
 public class Controller{
 
-    HashMap<Label,String> mapa=new HashMap();
+    HashMap<Label,Tarea> mapa=new HashMap();
+    Tarea tarea1= new Tarea("Hacer Práctica 2 PSP",false);
+    Tarea tarea2= new Tarea("Hacer Práctica 1 PSP",false);
+    Tarea tarea3= new Tarea("Hacer Práctica 2 DI",false);
+    Tarea tarea4= new Tarea("Hacer Práctica 1 DI",false);
+    Tarea tarea5= new Tarea("Hacer Práctica 2 PMDP",false);
+    Tarea tarea6= new Tarea("Hacer Práctica 1 PMDP",false);
+
 
     @FXML
     public void initialize(){
 
 
-        mapa.put(label1,"Hacer Práctica 2 PSP");
-        mapa.put(label2,"Hacer Práctica 1 PSP");
-        mapa.put(label3,"Hacer Práctica 2 DI");
-        mapa.put(label4,"Hacer Práctica 1 DI");
-        mapa.put(label5,"Hacer Práctica 2 PMDP");
-        mapa.put(label6,"Hacer Práctica 1 PMDP");
+        mapa.put(label1,tarea1);
+        mapa.put(label2,tarea2);
+        mapa.put(label3,tarea3);
+        mapa.put(label4,tarea4);
+        mapa.put(label5,tarea5);
+        mapa.put(label6,tarea6);
 
     }
 
     @FXML
-    RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
+    RadioButton radioButton1, radioButton2, radioButton3, radioButton4, radioButton5, radioButton6;
 
     @FXML
     Label label1,label2,label3,label4,label5,label6;
@@ -44,14 +50,18 @@ public class Controller{
     TextField textField1;
 
     @FXML
+    Image imagen1,imagen2,imagen3,imagen4,imagen5,imagen6;
+
+    @FXML
     public void onClickRB1(){
 
-        mapa.replace(label1,"");
+        tarea1.setTexto("");
+        //mapa.replace(label1,"");
         //actualizarLabels(label1);
 
         //Binder
 
-        Binder.bind(mapa.get(label1),label1,false);
+        Binder.bind(tarea1,label1,imagen1);
         deshabilitarAgregarTarea();
 
     }
@@ -59,12 +69,13 @@ public class Controller{
     @FXML
     public void onClickRB2(){
 
-        mapa.replace(label2,"");
+        tarea2.setTexto("");
+        //mapa.replace(label2,"");
         //actualizarLabels(label2);
 
         //Binder
 
-        Binder.bind(mapa.get(label2),label2,false);
+        Binder.bind(tarea2,label2,imagen2);
 
         deshabilitarAgregarTarea();
     }
@@ -72,13 +83,14 @@ public class Controller{
     @FXML
     public void onClickRB3(){
 
-        mapa.replace(label3,"");
+        tarea3.setTexto("");
+        //mapa.replace(label3,"");
         //actualizarLabels(label3);
 
 
         //Binder
 
-        Binder.bind(mapa.get(label3),label3,false);
+        Binder.bind(tarea3,label3,imagen3);
         deshabilitarAgregarTarea();
 
     }
@@ -86,14 +98,14 @@ public class Controller{
     @FXML
     public void onClickRB4(){
 
-
-        mapa.replace(label4,"");
+        tarea4.setTexto("");
+        //mapa.replace(label4,"");
         //actualizarLabels(label4);
 
 
         //Binder
 
-        Binder.bind(mapa.get(label4),label4,false);
+        Binder.bind(tarea4,label4,imagen4);
         deshabilitarAgregarTarea();
 
 
@@ -102,13 +114,14 @@ public class Controller{
     @FXML
     public void onClickRB5(){
 
-        mapa.replace(label5,"");
+        tarea5.setTexto("");
+        //mapa.replace(label5,"");
         //actualizarLabels(label5);
 
 
         //Binder
 
-        Binder.bind(mapa.get(label5),label5,false);
+        Binder.bind(tarea5,label5,imagen5);
         deshabilitarAgregarTarea();
 
     }
@@ -116,13 +129,14 @@ public class Controller{
     @FXML
     public void onClickRB6(){
 
-        mapa.replace(label6,"");
+        tarea6.setTexto("");
+        //mapa.replace(label6,"");
         //actualizarLabels(label6);
 
 
         //Binder
 
-        Binder.bind(mapa.get(label6),label6,false);
+        Binder.bind(tarea6,label6,imagen6);
         deshabilitarAgregarTarea();
 
 
@@ -131,16 +145,18 @@ public class Controller{
     @FXML
     public void setOnClickB1(){
 
-        String value;
+        Tarea value;
         boolean booleano=false;
         //Values y size para cambiar el for
         for (Label key: mapa.keySet()) {
+
             value =mapa.get(key);
-            if(value.equals("") && !booleano){
+            if(value.getTexto().equals("") && !booleano){
                 key.setText(textField1.getText());
-                mapa.replace(key,textField1.getText());
+                value.setTexto(textField1.getText());
+                //mapa.replace(key,textField1.getText());
                 //actualizarLabels(key);
-                Binder.bind(textField1.getText(),key,false);
+                Binder.bind(value,key,imagen1);//Cambiar el imagen1
                 deshabilitarAgregarTarea();
                 booleano= true;
 
@@ -151,8 +167,7 @@ public class Controller{
         //anchorPane1.setVisible(false);//Cambiar esto a deshabilitarAgregarTarea
         //deshabilitarAgregarTarea();
 
-        Collection<String> coleccion = mapa.values();
-        Iterator<String> it = coleccion.iterator();
+
 
 
 
@@ -160,12 +175,12 @@ public class Controller{
 
     public void deshabilitarAgregarTarea(){
 
-        String value;
+        Tarea value;
         boolean booleano=false;
         for (Label key: mapa.keySet()) {
 
             value =mapa.get(key);
-            if(value.equals("")){
+            if(value.getTexto().equals("")){
                 anchorPane1.setVisible(true);
                 booleano=true;
             }
@@ -176,12 +191,12 @@ public class Controller{
 
     }
 
-    public void actualizarLabels(Label label){
+    /*public void actualizarLabels(Label label){
 
 
         label.setText(mapa.get(label));
         deshabilitarAgregarTarea();
 
-    }
+    }*/
 
 }
