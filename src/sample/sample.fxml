@@ -32,7 +32,7 @@
                <children>
                   <RadioButton fx:id="radioButton1" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB1" />
                   <Label fx:id="label1" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
-                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagen1" fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" onMouseClicked="#onClickImg1" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/estrella.jpg" />
                      </image>
@@ -46,7 +46,7 @@
                <children>
                   <RadioButton fx:id="radioButton2" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB2" />
                   <Label fx:id="label2" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PSP" />
-                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagen2" fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" onMouseClicked="#onClickImg2" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/estrella.jpg" />
                      </image></ImageView>
@@ -59,7 +59,7 @@
                <children>
                   <RadioButton fx:id="radioButton3" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB3" />
                   <Label fx:id="label3" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 DI" />
-                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagen3" fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" onMouseClicked="#onClickImg3" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/estrella.jpg" />
                      </image></ImageView>
@@ -72,7 +72,7 @@
                <children>
                   <RadioButton fx:id="radioButton4" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB4" />
                   <Label fx:id="label4" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 DI" />
-                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagen4" fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" onMouseClicked="#onClickImg4" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/estrella.jpg" />
                      </image></ImageView>
@@ -88,7 +88,7 @@
                      <padding>
                         <Insets top="5.0" />
                      </padding></Label>
-                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagen5" fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" onMouseClicked="#onClickImg5" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/estrella.jpg" />
                      </image></ImageView>
@@ -101,7 +101,7 @@
                <children>
                   <RadioButton fx:id="radioButton6" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB6" />
                   <Label fx:id="label6" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PMDP" />
-                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagen6" fitHeight="17.0" fitWidth="21.0" layoutX="356.0" layoutY="17.0" onMouseClicked="#onClickImg6" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/estrella.jpg" />
                      </image></ImageView>

@@ -17,4 +17,13 @@ public class Tarea {
     public void setTexto(String texto) {
         this.texto = texto;
     }
+
+
+    public boolean getBooleano() {
+        return booleano;
+    }
+
+    public void setBooleano(boolean booleano) {
+        this.booleano = booleano;
+    }
 }

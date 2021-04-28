@@ -6,9 +6,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+
+import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class Controller{
 
@@ -35,7 +39,7 @@ public class Controller{
     }
 
     @FXML
-    RadioButton radioButton1, radioButton2, radioButton3, radioButton4, radioButton5, radioButton6;
+    RadioButton radioButton1, radioButton2, radioButton3, radioButton4, radioButton5, radioButton6  ;
 
     @FXML
     Label label1,label2,label3,label4,label5,label6;
@@ -50,7 +54,19 @@ public class Controller{
     TextField textField1;
 
     @FXML
-    Image imagen1,imagen2,imagen3,imagen4,imagen5,imagen6;
+    ImageView imagen1,imagen2,imagen3,imagen4,imagen5,imagen6;
+
+
+    File file = new File("src/images/estrella.jpg");
+    Image imagen = new Image(file.toURI().toString());
+
+    File fileFavorito = new File("src/images/estrellaDorada.png");
+    Image imagenFavorito = new Image(fileFavorito.toURI().toString());
+
+
+
+
+
 
     @FXML
     public void onClickRB1(){
@@ -61,8 +77,11 @@ public class Controller{
 
         //Binder
 
+
         Binder.bind(tarea1,label1,imagen1);
         deshabilitarAgregarTarea();
+
+
 
     }
 
@@ -72,6 +91,7 @@ public class Controller{
         tarea2.setTexto("");
         //mapa.replace(label2,"");
         //actualizarLabels(label2);
+
 
         //Binder
 
@@ -147,18 +167,20 @@ public class Controller{
 
         Tarea value;
         boolean booleano=false;
-        //Values y size para cambiar el for
+
         for (Label key: mapa.keySet()) {
 
-            value =mapa.get(key);
-            if(value.getTexto().equals("") && !booleano){
+            value = mapa.get(key);
+            if (value.getTexto().equals("") && !booleano) {
+
                 key.setText(textField1.getText());
                 value.setTexto(textField1.getText());
                 //mapa.replace(key,textField1.getText());
                 //actualizarLabels(key);
-                Binder.bind(value,key,imagen1);//Cambiar el imagen1
+                Binder.bind(value, key, imagen1);//Cambiar el imagen1
                 deshabilitarAgregarTarea();
-                booleano= true;
+                booleano = true;
+
 
             }
 
@@ -172,6 +194,147 @@ public class Controller{
 
 
     }
+
+    @FXML
+    public void onClickImg1(){
+
+        Tarea tareaAux;
+        tareaAux=mapa.get(label1);
+        if(!tareaAux.getBooleano()){
+            imagen1.setImage(imagenFavorito);
+
+            imagen1.fitWidthProperty();
+            imagen1.fitHeightProperty();
+            imagen1.setPreserveRatio(true);
+            tareaAux.setBooleano(true);
+        }else{
+            imagen1.setImage(imagen);
+
+            imagen1.fitWidthProperty();
+            imagen1.fitHeightProperty();
+            imagen1.setPreserveRatio(true);
+            tareaAux.setBooleano(false);
+        }
+
+
+
+    }
+
+    @FXML
+    public void onClickImg2(){
+
+        Tarea tareaAux;
+        tareaAux=mapa.get(label2);
+        if(!tareaAux.getBooleano()){
+            imagen2.setImage(imagenFavorito);
+
+            imagen2.fitWidthProperty();
+            imagen2.fitHeightProperty();
+            imagen2.setPreserveRatio(true);
+            tareaAux.setBooleano(true);
+        }else{
+            imagen2.setImage(imagen);
+
+            imagen2.fitWidthProperty();
+            imagen2.fitHeightProperty();
+            imagen2.setPreserveRatio(true);
+            tareaAux.setBooleano(false);
+        }
+
+    }
+
+    @FXML
+    public void onClickImg3(){
+
+        Tarea tareaAux;
+        tareaAux=mapa.get(label3);
+        if(!tareaAux.getBooleano()){
+            imagen3.setImage(imagenFavorito);
+
+            imagen3.fitWidthProperty();
+            imagen3.fitHeightProperty();
+            imagen3.setPreserveRatio(true);
+            tareaAux.setBooleano(true);
+        }else{
+            imagen3.setImage(imagen);
+
+            imagen3.fitWidthProperty();
+            imagen3.fitHeightProperty();
+            imagen3.setPreserveRatio(true);
+            tareaAux.setBooleano(false);
+        }
+
+    }
+
+    @FXML
+    public void onClickImg4(){
+
+        Tarea tareaAux;
+        tareaAux=mapa.get(label4);
+        if(!tareaAux.getBooleano()){
+            imagen4.setImage(imagenFavorito);
+
+            imagen4.fitWidthProperty();
+            imagen4.fitHeightProperty();
+            imagen4.setPreserveRatio(true);
+            tareaAux.setBooleano(true);
+        }else{
+            imagen4.setImage(imagen);
+
+            imagen4.fitWidthProperty();
+            imagen4.fitHeightProperty();
+            imagen4.setPreserveRatio(true);
+            tareaAux.setBooleano(false);
+        }
+
+    }
+
+    @FXML
+    public void onClickImg5(){
+
+        Tarea tareaAux;
+        tareaAux=mapa.get(label5);
+        if(!tareaAux.getBooleano()){
+            imagen5.setImage(imagenFavorito);
+
+            imagen5.fitWidthProperty();
+            imagen5.fitHeightProperty();
+            imagen5.setPreserveRatio(true);
+            tareaAux.setBooleano(true);
+        }else{
+            imagen5.setImage(imagen);
+
+            imagen5.fitWidthProperty();
+            imagen5.fitHeightProperty();
+            imagen5.setPreserveRatio(true);
+            tareaAux.setBooleano(false);
+        }
+
+    }
+
+    @FXML
+    public void onClickImg6(){
+
+        Tarea tareaAux;
+        tareaAux=mapa.get(label6);
+        if(!tareaAux.getBooleano()){
+            imagen6.setImage(imagenFavorito);
+
+            imagen6.fitWidthProperty();
+            imagen6.fitHeightProperty();
+            imagen6.setPreserveRatio(true);
+            tareaAux.setBooleano(true);
+        }else{
+            imagen6.setImage(imagen);
+
+            imagen6.fitWidthProperty();
+            imagen6.fitHeightProperty();
+            imagen6.setPreserveRatio(true);
+            tareaAux.setBooleano(false);
+        }
+
+    }
+
 
     public void deshabilitarAgregarTarea(){
 
