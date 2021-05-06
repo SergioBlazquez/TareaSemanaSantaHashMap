@@ -17,6 +17,8 @@ public class Ventana2 {
         textoSinModificar=textArea1.getText();
         modificacionOriginal=labelUltimaModificacion.getText();
 
+        //Con esto de aqui obtenemos los milisegundos y luego lo pasaremos a un formato de fecha más bonito
+        System.currentTimeMillis();
     }
 
     @FXML
