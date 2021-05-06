@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -8,21 +10,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+
 
 public class Controller{
 
     HashMap<Label,Tarea> mapa=new HashMap();
-    Tarea tarea1= new Tarea("Hacer Práctica 2 PSP",false);
-    Tarea tarea2= new Tarea("Hacer Práctica 1 PSP",false);
-    Tarea tarea3= new Tarea("Hacer Práctica 2 DI",false);
-    Tarea tarea4= new Tarea("Hacer Práctica 1 DI",false);
-    Tarea tarea5= new Tarea("Hacer Práctica 2 PMDP",false);
-    Tarea tarea6= new Tarea("Hacer Práctica 1 PMDP",false);
+    Tarea tarea1= new Tarea("Hacer Práctica 2 PSP",false,"16-04-2020","");
+    Tarea tarea2= new Tarea("Hacer Práctica 1 PSP",false,"25-04-2020","");
+    Tarea tarea3= new Tarea("Hacer Práctica 2 DI",false,"02-05-2020","");
+    Tarea tarea4= new Tarea("Hacer Práctica 1 DI",false,"10-05-2020","");
+    Tarea tarea5= new Tarea("Hacer Práctica 2 PMDP",false,"20-05-2020","");
+    Tarea tarea6= new Tarea("Hacer Práctica 1 PMDP",false,"21-05-2020","");
 
 
     @FXML
@@ -45,7 +47,7 @@ public class Controller{
     Label label1,label2,label3,label4,label5,label6;
 
     @FXML
-    AnchorPane anchorPane1;
+    AnchorPane anchorPane1, anchorPane2, anchorPane3, anchorPane4, anchorPane5, anchorPane6, anchorPaneAgregarTarea;
 
     @FXML
     Button botonAgregar1;
@@ -57,15 +59,42 @@ public class Controller{
     ImageView imagen1,imagen2,imagen3,imagen4,imagen5,imagen6;
 
 
+
+
     File file = new File("src/images/estrella.jpg");
-    Image imagen = new Image(file.toURI().toString());
+    Image imagenNoFavorito = new Image(file.toURI().toString());
 
     File fileFavorito = new File("src/images/estrellaDorada.png");
     Image imagenFavorito = new Image(fileFavorito.toURI().toString());
 
 
 
+@FXML
+public void onClickAnchorPane1(){
 
+    abrirInformacion(tarea1);
+
+
+}
+
+    private void abrirInformacion(Tarea tarea) {
+
+        try {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana2.fxml"));
+            AnchorPane root = (AnchorPane) loader.load();
+            Scene scene = new Scene(root,450,410);
+            stage.setScene(scene);
+            stage.show();
+
+            Ventana2 controller = loader.getController();
+            controller.ponerTextArea(tarea.getTexto());
+
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @FXML
@@ -200,21 +229,7 @@ public class Controller{
 
         Tarea tareaAux;
         tareaAux=mapa.get(label1);
-        if(!tareaAux.getBooleano()){
-            imagen1.setImage(imagenFavorito);
-
-            imagen1.fitWidthProperty();
-            imagen1.fitHeightProperty();
-            imagen1.setPreserveRatio(true);
-            tareaAux.setBooleano(true);
-        }else{
-            imagen1.setImage(imagen);
-
-            imagen1.fitWidthProperty();
-            imagen1.fitHeightProperty();
-            imagen1.setPreserveRatio(true);
-            tareaAux.setBooleano(false);
-        }
+        imagenFavorito(tareaAux,imagen1);
 
 
 
@@ -225,21 +240,7 @@ public class Controller{
 
         Tarea tareaAux;
         tareaAux=mapa.get(label2);
-        if(!tareaAux.getBooleano()){
-            imagen2.setImage(imagenFavorito);
-
-            imagen2.fitWidthProperty();
-            imagen2.fitHeightProperty();
-            imagen2.setPreserveRatio(true);
-            tareaAux.setBooleano(true);
-        }else{
-            imagen2.setImage(imagen);
-
-            imagen2.fitWidthProperty();
-            imagen2.fitHeightProperty();
-            imagen2.setPreserveRatio(true);
-            tareaAux.setBooleano(false);
-        }
+        imagenFavorito(tareaAux,imagen2);
 
     }
 
@@ -248,21 +249,7 @@ public class Controller{
 
         Tarea tareaAux;
         tareaAux=mapa.get(label3);
-        if(!tareaAux.getBooleano()){
-            imagen3.setImage(imagenFavorito);
-
-            imagen3.fitWidthProperty();
-            imagen3.fitHeightProperty();
-            imagen3.setPreserveRatio(true);
-            tareaAux.setBooleano(true);
-        }else{
-            imagen3.setImage(imagen);
-
-            imagen3.fitWidthProperty();
-            imagen3.fitHeightProperty();
-            imagen3.setPreserveRatio(true);
-            tareaAux.setBooleano(false);
-        }
+        imagenFavorito(tareaAux,imagen3);
 
     }
 
@@ -271,21 +258,7 @@ public class Controller{
 
         Tarea tareaAux;
         tareaAux=mapa.get(label4);
-        if(!tareaAux.getBooleano()){
-            imagen4.setImage(imagenFavorito);
-
-            imagen4.fitWidthProperty();
-            imagen4.fitHeightProperty();
-            imagen4.setPreserveRatio(true);
-            tareaAux.setBooleano(true);
-        }else{
-            imagen4.setImage(imagen);
-
-            imagen4.fitWidthProperty();
-            imagen4.fitHeightProperty();
-            imagen4.setPreserveRatio(true);
-            tareaAux.setBooleano(false);
-        }
+        imagenFavorito(tareaAux,imagen4);
 
     }
 
@@ -294,21 +267,7 @@ public class Controller{
 
         Tarea tareaAux;
         tareaAux=mapa.get(label5);
-        if(!tareaAux.getBooleano()){
-            imagen5.setImage(imagenFavorito);
-
-            imagen5.fitWidthProperty();
-            imagen5.fitHeightProperty();
-            imagen5.setPreserveRatio(true);
-            tareaAux.setBooleano(true);
-        }else{
-            imagen5.setImage(imagen);
-
-            imagen5.fitWidthProperty();
-            imagen5.fitHeightProperty();
-            imagen5.setPreserveRatio(true);
-            tareaAux.setBooleano(false);
-        }
+        imagenFavorito(tareaAux,imagen5);
 
     }
 
@@ -317,21 +276,8 @@ public class Controller{
 
         Tarea tareaAux;
         tareaAux=mapa.get(label6);
-        if(!tareaAux.getBooleano()){
-            imagen6.setImage(imagenFavorito);
 
-            imagen6.fitWidthProperty();
-            imagen6.fitHeightProperty();
-            imagen6.setPreserveRatio(true);
-            tareaAux.setBooleano(true);
-        }else{
-            imagen6.setImage(imagen);
-
-            imagen6.fitWidthProperty();
-            imagen6.fitHeightProperty();
-            imagen6.setPreserveRatio(true);
-            tareaAux.setBooleano(false);
-        }
+        imagenFavorito(tareaAux,imagen6);
 
     }
 
@@ -344,22 +290,35 @@ public class Controller{
 
             value =mapa.get(key);
             if(value.getTexto().equals("")){
-                anchorPane1.setVisible(true);
+                anchorPaneAgregarTarea.setVisible(true);
                 booleano=true;
             }
 
         }
         if(!booleano)
-            anchorPane1.setVisible(false);
+            anchorPaneAgregarTarea.setVisible(false);
 
     }
 
-    /*public void actualizarLabels(Label label){
+    private void imagenFavorito(Tarea tarea, ImageView imagen){
+
+        if(!tarea.getFavorito()){
+            imagen.setImage(imagenFavorito);
+
+            imagen.fitWidthProperty();
+            imagen.fitHeightProperty();
+            imagen.setPreserveRatio(true);
+            tarea.setFavorito(true);
+        }else{
+            imagen.setImage(imagenNoFavorito);
+
+            imagen.fitWidthProperty();
+            imagen.fitHeightProperty();
+            imagen.setPreserveRatio(true);
+            tarea.setFavorito(false);
+        }
 
 
-        label.setText(mapa.get(label));
-        deshabilitarAgregarTarea();
-
-    }*/
+    }
 
 }

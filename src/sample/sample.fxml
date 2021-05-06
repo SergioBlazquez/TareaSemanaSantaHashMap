@@ -114,7 +114,7 @@
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin></Label>
-            <AnchorPane fx:id="anchorPane1" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #A44796;" visible="false">
+            <AnchorPane fx:id="anchorPaneAgregarTarea" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #A44796;" visible="false">
                <children>
                   <Button fx:id="botonAgregar1" layoutX="6.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#setOnClickB1" prefHeight="15.0" style="-fx-background-color: #A44796;" text="+" textFill="WHITE" />
                   <TextField fx:id="textField1" layoutX="31.0" layoutY="13.0" prefHeight="25.0" prefWidth="200.0" promptText="Agregar una tarea" style="-fx-background-color: #A44796;" />
