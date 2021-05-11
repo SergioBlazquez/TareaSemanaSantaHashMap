@@ -5,12 +5,16 @@ public class Tarea {
     public boolean favorito;
     public String fechaCreacion;
     public String ultimaModificacion;
+    public String detalles;
 
 
 
-    public Tarea(String texto, boolean booleano, String fechaCreacion, String ultimaModificacion) {
+    public Tarea(String texto, boolean booleano, String fechaCreacion, String ultimaModificacion, String detalles) {
         this.texto = texto;
         this.favorito = booleano;
+        this.fechaCreacion=fechaCreacion;
+        this.ultimaModificacion=ultimaModificacion
+        this.detalles=detalles;
     }
 
     public String getTexto() {
@@ -33,6 +37,10 @@ public class Tarea {
 
     public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public String getFechaCreacion() {
+        return fechaCreacion;
     }
 
     public String getUltimaModificacion() {

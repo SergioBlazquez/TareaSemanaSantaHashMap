@@ -28,7 +28,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-size: 200 50; -fx-background-radius: 8 8 8 8;">
+            <AnchorPane fx:id="anchorPane1" onMouseClicked="#onClickAnchorPane1" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-size: 200 50; -fx-background-radius: 8 8 8 8;">
                <children>
                   <RadioButton fx:id="radioButton1" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB1" />
                   <Label fx:id="label1" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 PSP" />
@@ -42,7 +42,7 @@
                   <Insets />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+            <AnchorPane fx:id="anchorPane2" layoutX="10.0" layoutY="90.0" onMouseClicked="#onClickAnchorPane2" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
                   <RadioButton fx:id="radioButton2" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB2" />
                   <Label fx:id="label2" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PSP" />
@@ -55,7 +55,7 @@
                   <Insets top="2.0" />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="140.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+            <AnchorPane fx:id="anchorPane3" layoutX="10.0" layoutY="140.0" onMouseClicked="#onClickAnchorPane3" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
                   <RadioButton fx:id="radioButton3" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB3" />
                   <Label fx:id="label3" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 2 DI" />
@@ -68,7 +68,7 @@
                   <Insets top="2.0" />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="190.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+            <AnchorPane fx:id="anchorPane4" layoutX="10.0" layoutY="190.0" onMouseClicked="#onClickAnchorPane4" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
                   <RadioButton fx:id="radioButton4" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB4" />
                   <Label fx:id="label4" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 DI" />
@@ -81,7 +81,7 @@
                   <Insets top="2.0" />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="240.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+            <AnchorPane fx:id="anchorPane5" layoutX="10.0" layoutY="240.0" onMouseClicked="#onClickAnchorPane5" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
                   <RadioButton fx:id="radioButton5" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB5" />
                   <Label fx:id="label5" layoutX="53.0" layoutY="14.0" text="Hacer Práctica 2 PMDP">
@@ -97,7 +97,7 @@
                   <Insets top="2.0" />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="290.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
+            <AnchorPane fx:id="anchorPane6" layoutX="10.0" layoutY="290.0" onMouseClicked="#onClickAnchorPane6" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8 8 8 8;">
                <children>
                   <RadioButton fx:id="radioButton6" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onClickRB6" />
                   <Label fx:id="label6" layoutX="55.0" layoutY="17.0" text="Hacer Práctica 1 PMDP" />

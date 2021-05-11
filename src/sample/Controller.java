@@ -13,18 +13,21 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.Date;
 import java.util.HashMap;
 
 
 public class Controller{
 
     HashMap<Label,Tarea> mapa=new HashMap();
-    Tarea tarea1= new Tarea("Hacer Práctica 2 PSP",false,"16-04-2020","");
-    Tarea tarea2= new Tarea("Hacer Práctica 1 PSP",false,"25-04-2020","");
-    Tarea tarea3= new Tarea("Hacer Práctica 2 DI",false,"02-05-2020","");
-    Tarea tarea4= new Tarea("Hacer Práctica 1 DI",false,"10-05-2020","");
-    Tarea tarea5= new Tarea("Hacer Práctica 2 PMDP",false,"20-05-2020","");
-    Tarea tarea6= new Tarea("Hacer Práctica 1 PMDP",false,"21-05-2020","");
+    Tarea tarea1= new Tarea("Hacer Práctica 2 PSP",false,"16-04-2020","","");
+    Tarea tarea2= new Tarea("Hacer Práctica 1 PSP",false,"25-04-2020","","");
+    Tarea tarea3= new Tarea("Hacer Práctica 2 DI",false,"02-05-2020","","");
+    Tarea tarea4= new Tarea("Hacer Práctica 1 DI",false,"10-05-2020","","");
+    Tarea tarea5= new Tarea("Hacer Práctica 2 PMDP",false,"20-05-2020","","");
+    Tarea tarea6= new Tarea("Hacer Práctica 1 PMDP",false,"21-05-2020","","");
+
+
 
 
     @FXML
@@ -37,6 +40,8 @@ public class Controller{
         mapa.put(label4,tarea4);
         mapa.put(label5,tarea5);
         mapa.put(label6,tarea6);
+
+
 
     }
 
@@ -69,13 +74,7 @@ public class Controller{
 
 
 
-@FXML
-public void onClickAnchorPane1(){
 
-    abrirInformacion(tarea1);
-
-
-}
 
     private void abrirInformacion(Tarea tarea) {
 
@@ -88,8 +87,7 @@ public void onClickAnchorPane1(){
             stage.show();
 
             Ventana2 controller = loader.getController();
-            controller.ponerTextArea(tarea.getTexto());
-
+            controller.pasarTarea(tarea);
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -97,10 +95,20 @@ public void onClickAnchorPane1(){
     }
 
 
+    public void establecerUltimaFechaModificacion(Tarea tarea){
+
+        long milisegundos = System.currentTimeMillis();
+        Date fecha = new Date(milisegundos);
+        tarea.setUltimaModificacion(String.valueOf(fecha));
+
+    }
+
     @FXML
     public void onClickRB1(){
 
         tarea1.setTexto("");
+        establecerUltimaFechaModificacion(tarea1);
+
         //mapa.replace(label1,"");
         //actualizarLabels(label1);
 
@@ -118,6 +126,7 @@ public void onClickAnchorPane1(){
     public void onClickRB2(){
 
         tarea2.setTexto("");
+        establecerUltimaFechaModificacion(tarea2);
         //mapa.replace(label2,"");
         //actualizarLabels(label2);
 
@@ -133,6 +142,7 @@ public void onClickAnchorPane1(){
     public void onClickRB3(){
 
         tarea3.setTexto("");
+        establecerUltimaFechaModificacion(tarea3);
         //mapa.replace(label3,"");
         //actualizarLabels(label3);
 
@@ -148,6 +158,7 @@ public void onClickAnchorPane1(){
     public void onClickRB4(){
 
         tarea4.setTexto("");
+        establecerUltimaFechaModificacion(tarea4);
         //mapa.replace(label4,"");
         //actualizarLabels(label4);
 
@@ -164,6 +175,7 @@ public void onClickAnchorPane1(){
     public void onClickRB5(){
 
         tarea5.setTexto("");
+        establecerUltimaFechaModificacion(tarea5);
         //mapa.replace(label5,"");
         //actualizarLabels(label5);
 
@@ -179,6 +191,7 @@ public void onClickAnchorPane1(){
     public void onClickRB6(){
 
         tarea6.setTexto("");
+        establecerUltimaFechaModificacion(tarea6);
         //mapa.replace(label6,"");
         //actualizarLabels(label6);
 
@@ -204,6 +217,10 @@ public void onClickAnchorPane1(){
 
                 key.setText(textField1.getText());
                 value.setTexto(textField1.getText());
+                long milisegundos = System.currentTimeMillis();
+                Date fecha = new Date(milisegundos);
+                value.setFechaCreacion(String.valueOf(fecha));
+                value.setUltimaModificacion("");
                 //mapa.replace(key,textField1.getText());
                 //actualizarLabels(key);
                 Binder.bind(value, key, imagen1);//Cambiar el imagen1
@@ -280,6 +297,56 @@ public void onClickAnchorPane1(){
         imagenFavorito(tareaAux,imagen6);
 
     }
+
+    @FXML
+    public void onClickAnchorPane1(){
+
+        abrirInformacion(tarea1);
+
+
+    }
+
+    @FXML
+    public void onClickAnchorPane2(){
+
+        abrirInformacion(tarea2);
+
+
+    }
+
+    @FXML
+    public void onClickAnchorPane3(){
+
+        abrirInformacion(tarea3);
+
+
+    }
+
+    @FXML
+    public void onClickAnchorPane4(){
+
+        abrirInformacion(tarea4);
+
+
+    }
+
+    @FXML
+    public void onClickAnchorPane5(){
+
+        abrirInformacion(tarea5);
+
+
+    }
+
+
+    @FXML
+    public void onClickAnchorPane6(){
+
+        abrirInformacion(tarea6);
+
+
+    }
+
 
 
     public void deshabilitarAgregarTarea(){
