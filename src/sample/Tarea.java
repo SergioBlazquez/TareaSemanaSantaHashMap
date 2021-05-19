@@ -13,7 +13,7 @@ public class Tarea {
         this.texto = texto;
         this.favorito = booleano;
         this.fechaCreacion=fechaCreacion;
-        this.ultimaModificacion=ultimaModificacion
+        this.ultimaModificacion=ultimaModificacion;
         this.detalles=detalles;
     }
 
@@ -49,5 +49,13 @@ public class Tarea {
 
     public void setUltimaModificacion(String ultimaModificacion) {
         this.ultimaModificacion = ultimaModificacion;
+    }
+
+    public String getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(String detalles) {
+        this.detalles = detalles;
     }
 }

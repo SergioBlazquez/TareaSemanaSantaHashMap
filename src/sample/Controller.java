@@ -9,6 +9,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -76,32 +77,10 @@ public class Controller{
 
 
 
-    private void abrirInformacion(Tarea tarea) {
-
-        try {
-            Stage stage = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana2.fxml"));
-            AnchorPane root = (AnchorPane) loader.load();
-            Scene scene = new Scene(root,450,410);
-            stage.setScene(scene);
-            stage.show();
-
-            Ventana2 controller = loader.getController();
-            controller.pasarTarea(tarea);
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 
-    public void establecerUltimaFechaModificacion(Tarea tarea){
 
-        long milisegundos = System.currentTimeMillis();
-        Date fecha = new Date(milisegundos);
-        tarea.setUltimaModificacion(String.valueOf(fecha));
 
-    }
 
     @FXML
     public void onClickRB1(){
@@ -242,59 +221,70 @@ public class Controller{
     }
 
     @FXML
-    public void onClickImg1(){
+    public void onClickImg1(MouseEvent e){
 
         Tarea tareaAux;
         tareaAux=mapa.get(label1);
         imagenFavorito(tareaAux,imagen1);
 
+        e.consume();
 
 
     }
 
     @FXML
-    public void onClickImg2(){
+    public void onClickImg2(MouseEvent e){
 
         Tarea tareaAux;
         tareaAux=mapa.get(label2);
         imagenFavorito(tareaAux,imagen2);
 
+        e.consume();
+
     }
 
     @FXML
-    public void onClickImg3(){
+    public void onClickImg3(MouseEvent e){
 
         Tarea tareaAux;
         tareaAux=mapa.get(label3);
         imagenFavorito(tareaAux,imagen3);
 
+        e.consume();
+
     }
 
     @FXML
-    public void onClickImg4(){
+    public void onClickImg4(MouseEvent e){
 
         Tarea tareaAux;
         tareaAux=mapa.get(label4);
         imagenFavorito(tareaAux,imagen4);
 
+        e.consume();
+
     }
 
     @FXML
-    public void onClickImg5(){
+    public void onClickImg5(MouseEvent e){
 
         Tarea tareaAux;
         tareaAux=mapa.get(label5);
         imagenFavorito(tareaAux,imagen5);
 
+        e.consume();
+
     }
 
     @FXML
-    public void onClickImg6(){
+    public void onClickImg6(MouseEvent e){
 
         Tarea tareaAux;
         tareaAux=mapa.get(label6);
 
         imagenFavorito(tareaAux,imagen6);
+
+        e.consume();
 
     }
 
@@ -367,6 +357,14 @@ public class Controller{
 
     }
 
+    public void establecerUltimaFechaModificacion(Tarea tarea){
+
+        long milisegundos = System.currentTimeMillis();
+        Date fecha = new Date(milisegundos);
+        tarea.setUltimaModificacion(String.valueOf(fecha));
+
+    }
+
     private void imagenFavorito(Tarea tarea, ImageView imagen){
 
         if(!tarea.getFavorito()){
@@ -386,6 +384,24 @@ public class Controller{
         }
 
 
+    }
+
+    private void abrirInformacion(Tarea tarea) {
+
+        try {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana2.fxml"));
+            AnchorPane root = (AnchorPane) loader.load();
+            Scene scene = new Scene(root,450,410);
+            stage.setScene(scene);
+            stage.show();
+
+            Ventana2 controller = loader.getController();
+            controller.pasarTarea(tarea);
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

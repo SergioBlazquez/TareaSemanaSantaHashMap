@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Ventana2 {
@@ -12,100 +13,83 @@ public class Ventana2 {
     @FXML
     Label labelTextoModificado, labelUltimaModificacion, labelFechaCreacion;
 
-    String textoSinModificar="";
-    String textoDetalles="";
-    String modificacionOriginal="";
+    //String textoSinModificar="";
+    //String modificacionOriginal="";
     long milisegundos=0;
 
     Tarea tareaAux;
+    Tarea tarea;
     @FXML
     public void initialize(){
-        textoSinModificar=textArea1.getText();
+        /*
+
         System.out.println(textoSinModificar);
-        textoDetalles=textArea2.getText();
-        modificacionOriginal=labelUltimaModificacion.getText();
+        modificacionOriginal=labelUltimaModificacion.getText();*/
 
 
     }
 
     @FXML
-    public void cambiarTexto(){
+    public void onTextoDetallesChange(){
 
-        //Cambiar to.do lo del sample por el nuevo String de Tarea --> detalles
 
-        System.out.println(textoDetalles+" - "+textArea2.getText());
 
-        if(/*!textoSinModificar.equals(textArea1.getText()) || */!textoDetalles.equals(textArea2.getText())) {
-            textoDetalles=textArea2.getText();
-            labelTextoModificado.setVisible(true);
+        //System.out.println(tareaAux.getDetalles()+" - "+textArea2.getText());
+
+        if(!tarea.getDetalles().equals(textArea2.getText())) {
+
+            //tareaAux.setDetalles(textArea2.getText());
+            tareaAux.detalles=textArea2.getText();
+
             milisegundos=System.currentTimeMillis();
             Date fecha = new Date(milisegundos);
-            labelUltimaModificacion.setText(String.valueOf(fecha));
 
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+
+
+            labelUltimaModificacion.setText(dateFormatter.format(fecha));
+
+        }else{
+            if(tareaAux.getDetalles().equals(tarea.getDetalles()))
+                labelUltimaModificacion.setText("-");
         }
 
-        //Crear una funcion para que cuando se quite el cursor guardar la cadena actual
+
     }
 
     @FXML
-    public void cambiarTexto2() {
+    public void onTextoNombreChange() {
 
-        System.out.println(tareaAux.getTexto()+" - "+textArea1.getText());
+        //System.out.println(tareaAux.getTexto()+" - "+textArea1.getText());
 
-        //System.out.println(textoSinModificar+" - "+textArea1.getText());
         if (!tareaAux.getTexto().equals(textArea1.getText())) {
+
+            tareaAux.setTexto(textArea1.getText());
             labelTextoModificado.setVisible(true);
             milisegundos = System.currentTimeMillis();
             Date fecha = new Date(milisegundos);
-            labelUltimaModificacion.setText(String.valueOf(fecha));
+
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+
+
+            labelUltimaModificacion.setText(dateFormatter.format(fecha));
 
         }
     }
 
 
-    // Borrar o Cambiar
-    @FXML
-    public void noCambiaElTexto(){
-        if(textoSinModificar.equals(labelTextoModificado.getText()))
-            labelUltimaModificacion.setText(modificacionOriginal);
-        labelTextoModificado.setVisible(false);
-    }
 
-
-    @FXML
-    public void controlarQueTodoEsteBien(){
-        cambiarTexto2();
-
-    }
-
-    @FXML
-    public void controlarQueTodoEsteBienDetalles(){
-        cambiarTexto();
-
-    }
-
-
-
-    //Metodos llamados desde el Controller
 
     public void pasarTarea(Tarea tarea){
+        tareaAux= new Tarea(tarea.texto, tarea.favorito, tarea.fechaCreacion, tarea.ultimaModificacion, tarea.detalles);
 
-        tareaAux=tarea;
+        this.tarea=tarea;
 
-       textArea1.setText(tarea.getTexto());
-       labelFechaCreacion.setText(tarea.getFechaCreacion());
+        textArea1.setText(tarea.getTexto());
+        textArea2.setText(tarea.getDetalles());
+        labelFechaCreacion.setText(tarea.getFechaCreacion());
     }
 
-
-    public void ponerTextArea(String cadena){
-
-        textArea1.setText(cadena);
-    }
-
-    public void ponerFechaDeCreacion(String cadena){
-
-        labelFechaCreacion.setText(cadena);
-    }
 
 }
 
