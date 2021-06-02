@@ -3,7 +3,10 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -12,6 +15,8 @@ public class Ventana2 {
     TextArea textArea1,textArea2;
     @FXML
     Label labelTextoModificado, labelUltimaModificacion, labelFechaCreacion;
+    @FXML
+    ImageView imageView;
 
     //String textoSinModificar="";
     //String modificacionOriginal="";
@@ -19,12 +24,24 @@ public class Ventana2 {
 
     Tarea tareaAux;
     Tarea tarea;
+
+    File file = new File("src/images/estrella.jpg");
+    Image imagenNoFavorito = new Image(file.toURI().toString());
+
+    File fileFavorito = new File("src/images/estrellaDorada.png");
+    Image imagenFavorito = new Image(fileFavorito.toURI().toString());
+
+    private Controller controllerVentana1;
+
+
+
     @FXML
     public void initialize(){
         /*
 
         System.out.println(textoSinModificar);
         modificacionOriginal=labelUltimaModificacion.getText();*/
+
 
 
     }
@@ -77,6 +94,23 @@ public class Ventana2 {
         }
     }
 
+    @FXML
+    public void onClickImageView(){
+
+        if(tareaAux.favorito) {
+            imageView.setImage(imagenNoFavorito);
+            tareaAux.favorito=false;
+            //controllerVentana1.refrescarAlInstante(tareaAux,imagenNoFavorito);
+        }else {
+            imageView.setImage(imagenFavorito);
+            tareaAux.favorito=true;
+            //controllerVentana1.refrescarAlInstante(tareaAux,imagenFavorito);
+        }
+
+
+
+    }
+
 
 
 
@@ -88,6 +122,23 @@ public class Ventana2 {
         textArea1.setText(tarea.getTexto());
         textArea2.setText(tarea.getDetalles());
         labelFechaCreacion.setText(tarea.getFechaCreacion());
+        comprobarFavorito();
+    }
+
+    public void enviarController1(Controller ventana1Controller) {
+        controllerVentana1 = ventana1Controller;
+    }
+
+
+    public void comprobarFavorito(){
+
+        if(tareaAux.favorito) {
+            imageView.setImage(imagenFavorito);
+            tareaAux.favorito=true;
+        }else {
+            imageView.setImage(imagenNoFavorito);
+            tareaAux.favorito=false;
+        }
     }
 
 

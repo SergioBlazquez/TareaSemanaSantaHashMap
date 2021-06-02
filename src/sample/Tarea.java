@@ -1,11 +1,15 @@
 package sample;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 public class Tarea {
     public String texto;
     public boolean favorito;
     public String fechaCreacion;
     public String ultimaModificacion;
     public String detalles;
+
 
 
 
@@ -58,4 +62,5 @@ public class Tarea {
     public void setDetalles(String detalles) {
         this.detalles = detalles;
     }
+
 }

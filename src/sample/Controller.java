@@ -14,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -27,6 +28,10 @@ public class Controller{
     Tarea tarea4= new Tarea("Hacer Práctica 1 DI",false,"10-05-2020","","");
     Tarea tarea5= new Tarea("Hacer Práctica 2 PMDP",false,"20-05-2020","","");
     Tarea tarea6= new Tarea("Hacer Práctica 1 PMDP",false,"21-05-2020","","");
+
+    ArrayList<Tarea> listaTareas = new ArrayList<>();
+    ArrayList<ImageView> listaImagenes = new ArrayList<>();
+    ArrayList<Label> listaLabels = new ArrayList<>();
 
 
 
@@ -42,6 +47,28 @@ public class Controller{
         mapa.put(label5,tarea5);
         mapa.put(label6,tarea6);
 
+
+        listaTareas.add(tarea1);
+        listaTareas.add(tarea2);
+        listaTareas.add(tarea3);
+        listaTareas.add(tarea4);
+        listaTareas.add(tarea5);
+        listaTareas.add(tarea6);
+
+
+        listaImagenes.add(imagen1);
+        listaImagenes.add(imagen2);
+        listaImagenes.add(imagen3);
+        listaImagenes.add(imagen4);
+        listaImagenes.add(imagen5);
+        listaImagenes.add(imagen6);
+
+        listaLabels.add(label1);
+        listaLabels.add(label2);
+        listaLabels.add(label3);
+        listaLabels.add(label4);
+        listaLabels.add(label5);
+        listaLabels.add(label6);
 
 
     }
@@ -74,7 +101,7 @@ public class Controller{
     Image imagenFavorito = new Image(fileFavorito.toURI().toString());
 
 
-
+    Ventana2 controllerVentana2=null;
 
 
 
@@ -189,7 +216,7 @@ public class Controller{
         Tarea value;
         boolean booleano=false;
 
-        for (Label key: mapa.keySet()) {
+        /*for (Label key: mapa.keySet()) {
 
             value = mapa.get(key);
             if (value.getTexto().equals("") && !booleano) {
@@ -209,8 +236,29 @@ public class Controller{
 
             }
 
+        }*/
+        //textField1.setText("");
+
+        String texto="";
+        Label label;
+        for(int i=0;i< listaTareas.size();i++) {
+            if (listaTareas.get(i).getTexto().equals("")){
+
+                listaTareas.get(i).setTexto(textField1.getText());
+                long milisegundos = System.currentTimeMillis();
+                Date fecha = new Date(milisegundos);
+
+                listaTareas.get(i).setFechaCreacion(String.valueOf(fecha));
+                listaTareas.get(i).setUltimaModificacion("");
+
+
+                Binder.bind(listaTareas.get(i), listaLabels.get(i),listaImagenes.get(i));
+                deshabilitarAgregarTarea();
+            }
         }
-        textField1.setText("");
+
+
+
         //anchorPane1.setVisible(false);//Cambiar esto a deshabilitarAgregarTarea
         //deshabilitarAgregarTarea();
 
@@ -341,8 +389,9 @@ public class Controller{
 
     public void deshabilitarAgregarTarea(){
 
-        Tarea value;
         boolean booleano=false;
+        /*Tarea value;
+
         for (Label key: mapa.keySet()) {
 
             value =mapa.get(key);
@@ -353,7 +402,19 @@ public class Controller{
 
         }
         if(!booleano)
-            anchorPaneAgregarTarea.setVisible(false);
+            anchorPaneAgregarTarea.setVisible(false);*/
+
+        for(int i=0;i< listaTareas.size();i++) {
+
+            if(listaTareas.get(i).getTexto().equals("")){
+                anchorPaneAgregarTarea.setVisible(true);
+                booleano=true;
+            }
+            if(!booleano)
+                anchorPaneAgregarTarea.setVisible(false);
+
+
+        }
 
     }
 
@@ -392,16 +453,51 @@ public class Controller{
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana2.fxml"));
             AnchorPane root = (AnchorPane) loader.load();
-            Scene scene = new Scene(root,450,410);
+            Scene scene = new Scene(root,500,500);
             stage.setScene(scene);
             stage.show();
 
             Ventana2 controller = loader.getController();
             controller.pasarTarea(tarea);
 
+            controllerVentana2 = loader.getController();
+            controllerVentana2.enviarController1(this);
+
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
+
+    public void refrescarAlInstante(Tarea tarea, ImageView imagen){
+
+        if(!tarea.getFavorito()){
+
+            imagen.setImage(imagenFavorito);
+
+            imagen.fitWidthProperty();
+            imagen.fitHeightProperty();
+            imagen.setPreserveRatio(true);
+            tarea.setFavorito(true);
+        }else{
+            imagen.setImage(imagenNoFavorito);
+
+            imagen.fitWidthProperty();
+            imagen.fitHeightProperty();
+            imagen.setPreserveRatio(true);
+            tarea.setFavorito(false);
+        }
+
+
+
+
+
+    }
+
+    /*public void ordenarPorUltimaModificacion(){
+        ArrayList<Tarea> listaTareasOrdenadas=new ArrayList<>();
+        for (int i=0;i<listaTareas.size();i++){
+        }
+    }*/
+
 
 }
